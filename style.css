@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap');
+
+:root{
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+    --White: hsl(0, 0%, 100%);
+    --Slightly-main: hsla(0, 0%, 100%, 0.75);
+    --Slightly-stat: hsla(0, 0%, 100%, 0.6);
+    --overlay: rgba(128, 10, 197, 0.5);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Very-dark-blue);
+    display: grid;
+    place-content: center;
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+.card{
+    background-color: var(--Dark-desaturated-blue);
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+}
+
+.col-1{
+   padding: 2.5rem;
+}
+
+.col-1 h2{
+    color: var(--White);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.col-1 span{
+    color: var(--Soft-violet);
+}
+
+.col-1 p{
+    color: var(--Slightly-stat);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    margin-top: 23px;
+    line-height: 1.7;
+}
+
+.col-1 ul{
+    display: flex;
+    justify-content: stretch;
+    align-items: end;
+    gap: 20px;
+    list-style: none;
+    margin-top: auto;
+    height: 105px;
+}
+
+.col-1 li{
+    color: var(--Slightly-stat);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.col-1 strong{
+    color: var(--White);
+    font-size: 22px;
+    letter-spacing: 0;
+}
+
+.col-2 {
+    position: relative;
+}
+
+.col-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(var(--overlay), var(--overlay));
+    border-radius: 0 10px 10px 0;
+    pointer-events: none; 
+}
+
+.col-2 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: absolute; 
+    bottom: 3px; 
+    width: 100%;
+    color: var(--White);
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body{
+        padding: 0 1rem;
+    }
+    
+    .card{
+        max-width: 780px;
+    }
+
+    .attribution{
+        bottom: 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    body{
+        padding: 1rem;
+    }
+
+    .card{
+        max-width: 530px;
+        border-radius: 10px;
+    }
+    
+    .row{
+        grid-template-columns: 1.5fr;
+    }
+
+    .col-1{
+        order: 2;
+    }
+
+    .col-1 h2{
+        text-align: center;
+    }
+
+    .col-1 p{
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .col-1 ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-1 ul li {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .col-2{
+        order: 1;
+    }
+
+    .col-2::after {
+        border-radius: 10px 10px 0 0; 
+    }
+
+    .col-2 img{
+        border-radius: 10px 10px 0 0;
+    }
+
+    .attribution{
+        position: relative;
+        top: 20px;
+    }
+}
